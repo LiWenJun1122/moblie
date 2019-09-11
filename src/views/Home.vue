@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div>
+    <div style="background:#f5f5f5" id="home-tab" v-if="active=='home-tab'">
       <div>
         <van-nav-bar title="聚成品"  right-text="搜索" @click-right="onClickRight"/>
         <van-search class="search" v-bind:style="{display:show}" placeholder="请输入搜索关键词" v-model="value" />
@@ -10,22 +10,49 @@
           <img style="width:375px;height:185px" v-lazy="image" />
         </van-swipe-item>
       </van-swipe> 
+      <div class="home-a">
         <van-grid :border="false" :column-num="3" v-for="(sp,aa) of list2" :key="aa" >
+          <h3 style="display:block;width:100%;text-align:left;">{{sp.title}}</h3>
           <van-grid-item style="overfloat:hidden" v-for="(dj,bb) of sp.spList" :key="bb">
             <van-image :src="dj.sLink" />
           </van-grid-item>
         </van-grid>
-
+      </div>
     </div>
+    <!-- <hPage v-if="active=='home-tab'" />-->
+    <List v-if="active=='list'" name="list"></List>
+
+    <van-tabbar active-color="#e61e04" v-model="active">
+      <van-tabbar-item  name="home-tab" icon="home-o">
+        <!-- <span>首页</span> -->
+        <!-- <img
+          slot="icon"
+          slot-scope="props"
+          :src="props.active ? icon.active : icon.normal"
+        > -->
+        首页
+      </van-tabbar-item>
+      <van-tabbar-item name="list" icon="search">标签</van-tabbar-item>
+      <van-tabbar-item icon="setting-o">标签</van-tabbar-item>
+    </van-tabbar>
   </div>
 </template>
 
 <script>
+import List from './List.vue'
 export default {
+  components: {
+    List
+},
   data() {
-    return {
+    return {                   
       value:"",
       show:"none",
+      active:"home-tab",
+      icon:{
+         normal: require('../../public/imgs/icon/home.png'),
+        active: require('../../public/imgs/icon/home-active.png')
+      },
       list: [
         {
           spell: "精挑细选，给你最好的礼物。",
@@ -238,6 +265,12 @@ export default {
 <style>
 .search{
   position:absolute;top:-8px;left:70px;z-index:2;padding: 6px 12px;
+}
+.home-a{
+  padding-bottom: 40px;
+}
+h3{
+  margin-bottom: 5px;
 }
 </style>
 
