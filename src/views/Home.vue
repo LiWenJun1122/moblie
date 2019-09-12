@@ -44,8 +44,9 @@ export default {
   components: {
     List
 },
+
   data() {
-    return {                   
+    return {
       value:"",
       show:"none",
       active:"home-tab",
