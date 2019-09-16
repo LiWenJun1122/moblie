@@ -21,7 +21,7 @@
     </div>
     <!-- <hPage v-if="active=='home-tab'" />-->
     <List v-if="active=='list'" name="list"></List>
-
+    <Center v-if="active=='center'" name="center"></Center>
     <van-tabbar active-color="#e61e04" v-model="active">
       <van-tabbar-item  name="home-tab" icon="home-o">
         <!-- <span>首页</span> -->
@@ -33,16 +33,18 @@
         首页
       </van-tabbar-item>
       <van-tabbar-item name="list" icon="search">标签</van-tabbar-item>
-      <van-tabbar-item icon="setting-o">标签</van-tabbar-item>
+      <van-tabbar-item name="center" icon="setting-o">标签</van-tabbar-item>
     </van-tabbar>
   </div>
 </template>
 
 <script>
 import List from './List.vue'
+import Center from './Center.vue'
 export default {
   components: {
-    List
+    List,
+    Center
 },
 
   data() {

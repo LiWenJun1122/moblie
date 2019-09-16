@@ -2,18 +2,23 @@
   <div id="list">
     <van-tabs v-model="activeName">
   <van-tab title="新品推荐" name="a">
+    <van-list
+  v-model="loading"
+  :finished="finished"
+  finished-text="没有更多了"
+  @load="onLoad"
+>
     <van-card
-        num="2"
         :price="aa.Price"
         :desc="aa.sMallName"  
         :title="aa.sDescribe"
         :thumb="aa.sLink"
         v-for="(aa,index) in list2[0].spList" :key="index"
     />
+    </van-list>
   </van-tab>
   <van-tab title="定制专区" name="b" >
     <van-card
-  num="2"
         :price="aa.Price"
         :desc="aa.sMallName"  
         :title="aa.sDescribe"
@@ -31,7 +36,6 @@
   </van-tab>
   <van-tab title="毛绒玩具" name="c">
     <van-card
-  num="2"
         :price="aa.Price"
         :desc="aa.sMallName"  
         :title="aa.sDescribe"
@@ -48,7 +52,6 @@ export default {
   data() {
     return {
       activeName: "a",
-      list: [],
       loading: false,
       finished: false,
       list2: [
@@ -64,6 +67,292 @@ export default {
               sDescribe: "雷神枪模",
               sLink: require("../../public/imgs/xinpin/xinpin1.jpg"),
               sMallName: "M4A1-雷神 枪模手办",
+              sName: "新品推荐",
+              sNameDesc: "荣耀新品，Q到你想要！",
+              sTitle: "新品"
+            },
+            {
+              Price: 298,
+              iTargetType: "1",
+              sAdKey: "index_goods_0",
+              sDescribe: "雷神枪模",
+              sLink: require("../../public/imgs/xinpin/xinpin1.jpg"),
+              sMallName: "M4A1-雷神 枪模手办",
+              sName: "新品推荐",
+              sNameDesc: "荣耀新品，Q到你想要！",
+              sTitle: "新品"
+            },
+            {
+              Price: 298,
+              iTargetType: "1",
+              sAdKey: "index_goods_0",
+              sDescribe: "雷神枪模",
+              sLink: require("../../public/imgs/xinpin/xinpin1.jpg"),
+              sMallName: "M4A1-雷神 枪模手办",
+              sName: "新品推荐",
+              sNameDesc: "荣耀新品，Q到你想要！",
+              sTitle: "新品"
+            },
+            {
+              Price: 298,
+              iTargetType: "1",
+              sAdKey: "index_goods_0",
+              sDescribe: "雷神枪模",
+              sLink: require("../../public/imgs/xinpin/xinpin1.jpg"),
+              sMallName: "M4A1-雷神 枪模手办",
+              sName: "新品推荐",
+              sNameDesc: "荣耀新品，Q到你想要！",
+              sTitle: "新品"
+            },
+            {
+              Price: 98,
+              iTargetType: "1",
+              sAdKey: "index_goods_0",
+              sDescribe: "【预售】武神&幽兰颜究小盒",
+              sLink: require("../../public/imgs/xinpin/xinpin2.jpg"),
+              sMallName: "【现货】武神&幽兰颜究小盒",
+              sName: "新品推荐",
+              sNameDesc: "荣耀新品，Q到你想要！",
+              sTitle: "新品"
+            },
+            {
+              Price: 98,
+              iTargetType: "1",
+              sAdKey: "index_goods_0",
+              sDescribe: "【预售】武神&幽兰颜究小盒",
+              sLink: require("../../public/imgs/xinpin/xinpin2.jpg"),
+              sMallName: "【现货】武神&幽兰颜究小盒",
+              sName: "新品推荐",
+              sNameDesc: "荣耀新品，Q到你想要！",
+              sTitle: "新品"
+            },
+            {
+              Price: 98,
+              iTargetType: "1",
+              sAdKey: "index_goods_0",
+              sDescribe: "【预售】武神&幽兰颜究小盒",
+              sLink: require("../../public/imgs/xinpin/xinpin2.jpg"),
+              sMallName: "【现货】武神&幽兰颜究小盒",
+              sName: "新品推荐",
+              sNameDesc: "荣耀新品，Q到你想要！",
+              sTitle: "新品"
+            },
+            {
+              Price: 98,
+              iTargetType: "1",
+              sAdKey: "index_goods_0",
+              sDescribe: "【预售】武神&幽兰颜究小盒",
+              sLink: require("../../public/imgs/xinpin/xinpin2.jpg"),
+              sMallName: "【现货】武神&幽兰颜究小盒",
+              sName: "新品推荐",
+              sNameDesc: "荣耀新品，Q到你想要！",
+              sTitle: "新品"
+            },
+            {
+              Price: 98,
+              iTargetType: "1",
+              sAdKey: "index_goods_0",
+              sDescribe: "【预售】武神&幽兰颜究小盒",
+              sLink: require("../../public/imgs/xinpin/xinpin2.jpg"),
+              sMallName: "【现货】武神&幽兰颜究小盒",
+              sName: "新品推荐",
+              sNameDesc: "荣耀新品，Q到你想要！",
+              sTitle: "新品"
+            },
+            {
+              Price: 98,
+              iTargetType: "1",
+              sAdKey: "index_goods_0",
+              sDescribe: "【预售】武神&幽兰颜究小盒",
+              sLink: require("../../public/imgs/xinpin/xinpin2.jpg"),
+              sMallName: "【现货】武神&幽兰颜究小盒",
+              sName: "新品推荐",
+              sNameDesc: "荣耀新品，Q到你想要！",
+              sTitle: "新品"
+            },
+            {
+              Price: 98,
+              iTargetType: "1",
+              sAdKey: "index_goods_0",
+              sDescribe: "【预售】武神&幽兰颜究小盒",
+              sLink: require("../../public/imgs/xinpin/xinpin2.jpg"),
+              sMallName: "【现货】武神&幽兰颜究小盒",
+              sName: "新品推荐",
+              sNameDesc: "荣耀新品，Q到你想要！",
+              sTitle: "新品"
+            },
+            {
+              Price: 98,
+              iTargetType: "1",
+              sAdKey: "index_goods_0",
+              sDescribe: "【预售】武神&幽兰颜究小盒",
+              sLink: require("../../public/imgs/xinpin/xinpin2.jpg"),
+              sMallName: "【现货】武神&幽兰颜究小盒",
+              sName: "新品推荐",
+              sNameDesc: "荣耀新品，Q到你想要！",
+              sTitle: "新品"
+            },
+            {
+              Price: 98,
+              iTargetType: "1",
+              sAdKey: "index_goods_0",
+              sDescribe: "【预售】武神&幽兰颜究小盒",
+              sLink: require("../../public/imgs/xinpin/xinpin2.jpg"),
+              sMallName: "【现货】武神&幽兰颜究小盒",
+              sName: "新品推荐",
+              sNameDesc: "荣耀新品，Q到你想要！",
+              sTitle: "新品"
+            },
+            {
+              Price: 98,
+              iTargetType: "1",
+              sAdKey: "index_goods_0",
+              sDescribe: "【预售】武神&幽兰颜究小盒",
+              sLink: require("../../public/imgs/xinpin/xinpin2.jpg"),
+              sMallName: "【现货】武神&幽兰颜究小盒",
+              sName: "新品推荐",
+              sNameDesc: "荣耀新品，Q到你想要！",
+              sTitle: "新品"
+            },
+            {
+              Price: 98,
+              iTargetType: "1",
+              sAdKey: "index_goods_0",
+              sDescribe: "【预售】武神&幽兰颜究小盒",
+              sLink: require("../../public/imgs/xinpin/xinpin2.jpg"),
+              sMallName: "【现货】武神&幽兰颜究小盒",
+              sName: "新品推荐",
+              sNameDesc: "荣耀新品，Q到你想要！",
+              sTitle: "新品"
+            },
+            {
+              Price: 98,
+              iTargetType: "1",
+              sAdKey: "index_goods_0",
+              sDescribe: "【预售】武神&幽兰颜究小盒",
+              sLink: require("../../public/imgs/xinpin/xinpin2.jpg"),
+              sMallName: "【现货】武神&幽兰颜究小盒",
+              sName: "新品推荐",
+              sNameDesc: "荣耀新品，Q到你想要！",
+              sTitle: "新品"
+            },
+            {
+              Price: 98,
+              iTargetType: "1",
+              sAdKey: "index_goods_0",
+              sDescribe: "【预售】武神&幽兰颜究小盒",
+              sLink: require("../../public/imgs/xinpin/xinpin2.jpg"),
+              sMallName: "【现货】武神&幽兰颜究小盒",
+              sName: "新品推荐",
+              sNameDesc: "荣耀新品，Q到你想要！",
+              sTitle: "新品"
+            },
+            {
+              Price: 98,
+              iTargetType: "1",
+              sAdKey: "index_goods_0",
+              sDescribe: "【预售】武神&幽兰颜究小盒",
+              sLink: require("../../public/imgs/xinpin/xinpin2.jpg"),
+              sMallName: "【现货】武神&幽兰颜究小盒",
+              sName: "新品推荐",
+              sNameDesc: "荣耀新品，Q到你想要！",
+              sTitle: "新品"
+            },
+            {
+              Price: 98,
+              iTargetType: "1",
+              sAdKey: "index_goods_0",
+              sDescribe: "【预售】武神&幽兰颜究小盒",
+              sLink: require("../../public/imgs/xinpin/xinpin2.jpg"),
+              sMallName: "【现货】武神&幽兰颜究小盒",
+              sName: "新品推荐",
+              sNameDesc: "荣耀新品，Q到你想要！",
+              sTitle: "新品"
+            },
+            {
+              Price: 98,
+              iTargetType: "1",
+              sAdKey: "index_goods_0",
+              sDescribe: "【预售】武神&幽兰颜究小盒",
+              sLink: require("../../public/imgs/xinpin/xinpin2.jpg"),
+              sMallName: "【现货】武神&幽兰颜究小盒",
+              sName: "新品推荐",
+              sNameDesc: "荣耀新品，Q到你想要！",
+              sTitle: "新品"
+            },
+            {
+              Price: 98,
+              iTargetType: "1",
+              sAdKey: "index_goods_0",
+              sDescribe: "【预售】武神&幽兰颜究小盒",
+              sLink: require("../../public/imgs/xinpin/xinpin2.jpg"),
+              sMallName: "【现货】武神&幽兰颜究小盒",
+              sName: "新品推荐",
+              sNameDesc: "荣耀新品，Q到你想要！",
+              sTitle: "新品"
+            },
+            {
+              Price: 98,
+              iTargetType: "1",
+              sAdKey: "index_goods_0",
+              sDescribe: "【预售】武神&幽兰颜究小盒",
+              sLink: require("../../public/imgs/xinpin/xinpin2.jpg"),
+              sMallName: "【现货】武神&幽兰颜究小盒",
+              sName: "新品推荐",
+              sNameDesc: "荣耀新品，Q到你想要！",
+              sTitle: "新品"
+            },
+            {
+              Price: 98,
+              iTargetType: "1",
+              sAdKey: "index_goods_0",
+              sDescribe: "【预售】武神&幽兰颜究小盒",
+              sLink: require("../../public/imgs/xinpin/xinpin2.jpg"),
+              sMallName: "【现货】武神&幽兰颜究小盒",
+              sName: "新品推荐",
+              sNameDesc: "荣耀新品，Q到你想要！",
+              sTitle: "新品"
+            },
+            {
+              Price: 98,
+              iTargetType: "1",
+              sAdKey: "index_goods_0",
+              sDescribe: "【预售】武神&幽兰颜究小盒",
+              sLink: require("../../public/imgs/xinpin/xinpin2.jpg"),
+              sMallName: "【现货】武神&幽兰颜究小盒",
+              sName: "新品推荐",
+              sNameDesc: "荣耀新品，Q到你想要！",
+              sTitle: "新品"
+            },
+            {
+              Price: 98,
+              iTargetType: "1",
+              sAdKey: "index_goods_0",
+              sDescribe: "【预售】武神&幽兰颜究小盒",
+              sLink: require("../../public/imgs/xinpin/xinpin2.jpg"),
+              sMallName: "【现货】武神&幽兰颜究小盒",
+              sName: "新品推荐",
+              sNameDesc: "荣耀新品，Q到你想要！",
+              sTitle: "新品"
+            },
+            {
+              Price: 98,
+              iTargetType: "1",
+              sAdKey: "index_goods_0",
+              sDescribe: "【预售】武神&幽兰颜究小盒",
+              sLink: require("../../public/imgs/xinpin/xinpin2.jpg"),
+              sMallName: "【现货】武神&幽兰颜究小盒",
+              sName: "新品推荐",
+              sNameDesc: "荣耀新品，Q到你想要！",
+              sTitle: "新品"
+            },
+            {
+              Price: 98,
+              iTargetType: "1",
+              sAdKey: "index_goods_0",
+              sDescribe: "【预售】武神&幽兰颜究小盒",
+              sLink: require("../../public/imgs/xinpin/xinpin2.jpg"),
+              sMallName: "【现货】武神&幽兰颜究小盒",
               sName: "新品推荐",
               sNameDesc: "荣耀新品，Q到你想要！",
               sTitle: "新品"
@@ -216,11 +505,30 @@ export default {
     };
   },
 
-  methods: {}
+  methods: {
+    onLoad() {
+      // 异步更新数据
+      setTimeout(() => {
+        for (let i = 0; i < 1; i++) {
+          this.list2.push(this.list2.length + 1);
+        }
+        // 加载状态结束
+        this.loading = false;
+
+        // 数据全部加载完成
+        if (this.list2.length >= 10) {
+          this.finished = true;
+        }
+      }, 500);
+    }
+  }
 };
 </script>
 <style>
   .van-card__content{
     text-align:left;
+  }
+  #list{
+    padding-bottom:40px;
   }
 </style>
