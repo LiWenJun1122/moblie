@@ -1,6 +1,6 @@
 <template>
   <div>
-    <van-nav-bar  title="标题"  left-text="返回"  left-arrow  @click-left="onClickLeft"  @click-right="onClickRight"/>
+    <van-nav-bar  title="标题"  left-text="返回"  left-arrow  @click-left="onClickLeft"/>
     <div>
       <img height="350rem" width="350rem" :src="spList.sLink" alt="">
     </div>
@@ -104,10 +104,7 @@ export default {
   },
   methods: {
     onClickLeft() {
-      Toast("返回");
-    },
-    onClickRight() {
-      Toast("按钮");
+      this.$toast('返回');      
     },
     car() {},
     onBuyClicked() {

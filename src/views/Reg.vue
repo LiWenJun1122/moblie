@@ -1,0 +1,50 @@
+ <template>
+  <div>
+  <van-cell-group>
+  <van-field
+    v-model="username"
+    required
+    clearable
+    label="用户名"
+    right-icon="question-o"
+    placeholder="请输入用户名"
+    @click-right-icon="tishi"
+  />
+
+  <van-field
+    v-model="password"
+    type="password"
+    label="密码"
+    placeholder="请输入密码"
+    required
+    :error-message="errorMessage"
+    @blur="upwd"
+  />
+</van-cell-group>
+  </div>
+</template>
+<script>
+export default {
+  data() {
+    return {
+      username:"",
+      password:"",
+      errorMessage:""
+    };
+  },
+  methods:{
+    upwd(){
+      if(this.password==""){
+        this.errorMessage="密码不能为空"
+      }else{
+        this.errorMessage="";
+      }
+    },
+    tishi(){
+      this.$toast('*号部分为必填项,无则不填')
+    }
+  }
+};
+</script>
+<style>
+</style>

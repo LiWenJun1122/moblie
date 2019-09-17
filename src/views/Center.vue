@@ -8,6 +8,8 @@
     <div class="bor">
       <van-image round width="5rem" height="5rem" src="https://img.yzcdn.cn/vant/cat.jpeg"/>
     </div>
+    <van-cell title="购物车" is-link to="Details" />
+    <van-cell title="地址" is-link to="Details" />
   </div>
 </template>
 <script>
@@ -17,7 +19,6 @@ export default {
       this.$toast('登录成功');
     }
   }
-
 };
 </script>
 <style>
