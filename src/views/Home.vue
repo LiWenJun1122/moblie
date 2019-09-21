@@ -46,7 +46,6 @@ export default {
     List,
     Center
 },
-
   data() {
     return {
       value:"",

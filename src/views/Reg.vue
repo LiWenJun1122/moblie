@@ -38,6 +38,7 @@
         @blur="tel"
         maxlength="11"
       />
+      
       <van-radio-group style="padding: 10px 16px;" class="clearfix" v-model="radio">
         <div style="text-align:left;width: 90px;float:left;">
           <span>性别</span>
